@@ -198,5 +198,5 @@ map <leader>c <c-_><c-_>
 map <silent> <F4> :TlistToggle<CR>
 
 " Autocompletion setting for python
-" let g:pydiction_location = '/home/henry/.vim/pydiction-1.2/complete-dict'
-" let g:pydiction_menu_height = 20
+let g:pydiction_location = '/home/henry/.vim/pydiction-1.2/complete-dict'
+let g:pydiction_menu_height = 20
