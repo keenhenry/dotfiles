@@ -51,6 +51,8 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set history=500                 " Set how many lines of history VIM has to remember
 set autoread                    " Set auto read when a file is changed from outside
+set wildmode=longest,list,full  " match the longest common string
+set wildmenu                    " turn on tab completion in Vim
 
 " set autowrite		" Automatically save before commands like :next and :make
 "set hidden             " Hide buffers when they are abandoned
