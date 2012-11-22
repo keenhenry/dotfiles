@@ -159,7 +159,15 @@ set statusline=%<\ %n:%f\ %m%r%y\ [line:\ %l\ of\ %L,\ col:\ %c%V]\ (%P)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
+" For this section, vimscript comments inlined with the mapping
+" commands won't work! So don't put inline comments with key mappings!
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" map single space to scroll down in normal mode
+nnoremap <Space> <C-f>
+
+" map single shift to scroll back/up in normal mode
+nnoremap <Backspace> <C-b>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Cope
@@ -173,21 +181,17 @@ set statusline=%<\ %n:%f\ %m%r%y\ [line:\ %l\ of\ %L,\ col:\ %c%V]\ (%P)
 " => Javascript section
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Editing mappings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins related settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Settings for Taglist plugin
+"""""""" Settings for Taglist plugin
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"	" Setting the path to exuberant ctags utility
 let Tlist_Use_Right_Window = 1		    " To open the taglist window on the right hand side
 let Tlist_WinWidth = 50			        " Setting the default width of taglist window
 let Tlist_GainFocus_On_ToggleOpen = 1	" Set cursor to jump to taglist window when toggled open
 
-" Settings for NERDTree
+"""""""" Settings for NERDTree
 let NERDTreeShowBookmarks = 1          " Show bookmarks when NERDTree startup
 
 " NERTDTree toggle shortcut. Requires NERDTree plugin 
