@@ -49,6 +49,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set encoding=utf-8              " set the encoding to be variable lengths UTF-8
 set history=500                 " Set how many lines of history VIM has to remember
 set autoread                    " Set auto read when a file is changed from outside
 set wildmode=longest,list,full  " match the longest common string
