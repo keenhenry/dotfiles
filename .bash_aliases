@@ -2,6 +2,7 @@
 
 # some important directory shortcuts
 alias cdr='cd ~henry/Work/repos'
+alias h='cd ~'
 
 # some more ls aliases
 alias lla='ls -la'

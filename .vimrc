@@ -64,14 +64,8 @@ set wildmenu                    " turn on tab completion in Vim
 let mapleader = ","             " Set mapleader to comma
 let g:mapleader = ","           " Set mapleader to comma
 
-" Fast saving
-nmap <leader>w :w!<cr>
-
-" Fast editing of the .vimrc
-map <leader>e :e! ~/.vim_runtime/vimrc<cr>
-
 " When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+" autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -164,11 +158,45 @@ set statusline=%<\ %n:%f\ %m%r%y\ [line:\ %l\ of\ %L,\ col:\ %c%V]\ (%P)
 " commands won't work! So don't put inline comments with key mappings!
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Fast editing of the .vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" After editing of my .vimrc file, source it!
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 " map single space to scroll down in normal mode
 nnoremap <Space> <C-f>
 
 " map single shift to scroll back/up in normal mode
 nnoremap <Backspace> <C-b>
+
+" move the line down (by one line) 
+nnoremap - ddp
+
+" move the line up (by one line) 
+" nnoremap _ ddkP
+
+" delete one line in insert mode (and stay in insert mode on the same line)
+inoremap <C-d> <Esc>0d$i
+
+" uppercase the current word in insert mode (and put cursor one character 
+" after the word and stay in insert mode)
+inoremap <C-u> <Esc>viwUea
+
+" uppercase the current word in normal mode
+nnoremap <C-u> viwU
+
+" Fast saving
+nnoremap <leader>w :w!<cr>
+
+" Fast quiting
+nnoremap <leader>q :q!<cr>
+
+" Fast save+quitting
+nnoremap <leader>x :x!<cr>
+
+" Fast toggling ':set paste' command
+nnoremap <leader>p :set paste!<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Cope
@@ -205,5 +233,5 @@ map <leader>c <c-_><c-_>
 map <silent> <F4> :TlistToggle<CR>
 
 " Autocompletion setting for python
-let g:pydiction_location = '/home/henry/.vim/pydiction-1.2/complete-dict'
+let g:pydiction_location    = '/home/henry/.vim/pydiction-1.2/complete-dict'
 let g:pydiction_menu_height = 20
