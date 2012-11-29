@@ -61,8 +61,8 @@ set wildmenu                    " turn on tab completion in Vim
 			" set it when you need to paste stuff from other
 			" application manually, unset it with :set nopaste when done
 
-let mapleader = ","             " Set mapleader to comma
-let g:mapleader = ","           " Set mapleader to comma
+let mapleader=","             " Set mapleader to comma
+let g:mapleader=","           " Set mapleader to comma
 
 " When vimrc is edited, reload it
 " autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
@@ -92,6 +92,8 @@ set foldenable          " Turn on folding
 set foldmethod=indent   " Make folding indent sensitive
 set foldlevel=100       " Don't autofold anything (but I can still fold manually)
 set foldopen-=undo      " Don't open folds when you undo stuff
+
+set bs=indent,eol,start " allow backspace and delete to work in insert mode
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -152,6 +154,10 @@ set statusline=%<\ %n:%f\ %m%r%y\ [line:\ %l\ of\ %L,\ col:\ %c%V]\ (%P)
 " => General Abbrevs
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+iabbrev adn and
+iabbrev waht what
+iabbrev tehn then
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 " For this section, vimscript comments inlined with the mapping
@@ -177,14 +183,14 @@ nnoremap - ddp
 " nnoremap _ ddkP
 
 " delete one line in insert mode (and stay in insert mode on the same line)
-inoremap <C-d> <Esc>0d$i
+" inoremap <C-d> <Esc>0d$i
 
 " uppercase the current word in insert mode (and put cursor one character 
 " after the word and stay in insert mode)
-inoremap <C-u> <Esc>viwUea
+" inoremap <C-u> <Esc>viwUea
 
 " uppercase the current word in normal mode
-nnoremap <C-u> viwU
+" nnoremap <C-u> viwU
 
 " Fast saving
 nnoremap <leader>w :w!<cr>
@@ -197,6 +203,23 @@ nnoremap <leader>x :x!<cr>
 
 " Fast toggling ':set paste' command
 nnoremap <leader>p :set paste!<cr>
+
+" Fast quoting a word in normal mode (when the cursor is over that word)
+nnoremap <leader>" viw<Esc>hbi"<Esc>lel
+
+" Fast quoting a word in visual mode (when a word is visually selected) and
+" back in normal mode
+vnoremap " <Esc>`<i"<Esc>`>la"<Esc>
+
+" Fast jumping to start of a line in normal mode
+nnoremap <C-a> 0
+
+" Fast jumping to the end of a line in normal mode
+nnoremap <C-e> $
+
+" Scrolling in Autocompletion box with jk movement keys
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Cope
