@@ -21,10 +21,6 @@ if has("syntax")
   syntax on
 endif
 
-" If using a dark background within the editing area and syntax highlighting
-" turn on this option as well
-set background=dark
-
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
@@ -49,6 +45,16 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader=","             " Set mapleader to comma
+let g:mapleader=","           " Set mapleader to comma
+
+" When vimrc is edited and written to buffer, source it
+" with this autogroup, you don't need to source it manually
+augroup filetype_vimrc
+    autocmd! 
+    autocmd BufWritePost .vimrc source $MYVIMRC
+augroup END
+
 set encoding=utf-8              " set the encoding to be variable lengths UTF-8
 set history=500                 " Set how many lines of history VIM has to remember
 set autoread                    " Set auto read when a file is changed from outside
@@ -61,15 +67,11 @@ set wildmenu                    " turn on tab completion in Vim
 			" set it when you need to paste stuff from other
 			" application manually, unset it with :set nopaste when done
 
-let mapleader=","             " Set mapleader to comma
-let g:mapleader=","           " Set mapleader to comma
-
-" When vimrc is edited, reload it
-" autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set background=dark " set background of editing area to be dark
 set smartcase		" Do smart case matching
 set ignorecase		" Ignore case when searching
 
