@@ -138,13 +138,14 @@ set wrap            " Wrap lines
 "  %m modified flag [+] (modified), [-] (unmodifiable) or nothing
 "  %r readonly flag [RO]
 "  %y filetype [ruby]
+"  %= everthing coming after this sign should be aligned to the RIGHT
 "  %l current line number
 "  %L number of lines in buffer
 "  %c current column number
 "  %V current virtual column number (-n), if different from %c
 "  %P percentage through buffer
 "  %) end of width specification
-set statusline=%<\ %n:%f\ %m%r%y\ [line:\ %l\ of\ %L,\ col:\ %c%V]\ (%P)
+set statusline=%<\ %n:%f\ %m%r%y%=[line:\ %l\ of\ %L,\ col:\ %c%V]\ (%P)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Parenthesis/bracket expanding
@@ -154,9 +155,11 @@ set statusline=%<\ %n:%f\ %m%r%y\ [line:\ %l\ of\ %L,\ col:\ %c%V]\ (%P)
 " => General Abbrevs
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" abbreviations for some general typos in insert mode
 iabbrev adn and
 iabbrev waht what
 iabbrev tehn then
+iabbrev teh the
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
@@ -220,6 +223,22 @@ nnoremap <C-e> $
 " Scrolling in Autocompletion box with jk movement keys
 inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+
+" select texts in next parens and square brackets on current line
+onoremap in( :<C-u>normal! f(vi(<cr>
+onoremap in[ :<C-u>normal! f[vi[<cr>
+
+" select texts in last/previous parens and square brackets on current line
+onoremap il( :<C-u>normal! F)vi(<cr>
+onoremap il[ :<C-u>normal! F]vi[<cr>
+
+" select texts around next parens and square brackets on current line
+onoremap an( :<C-u>normal! f(v%<cr>
+onoremap an[ :<C-u>normal! f[v%<cr>
+
+" select texts around last/previous parens and square brackets on current line
+onoremap al( :<C-u>normal! F)v%<cr>
+onoremap al[ :<C-u>normal! F]v%<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Cope
