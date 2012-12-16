@@ -32,3 +32,6 @@ alias xml2xsd='java -jar ~/trang-20030619/trang.jar'
 
 # command to run python syntax highlighter
 alias hl='pygmentize -f html -o tmp.html'
+
+# jekyll alias
+alias jekylltest="jekyll; jekyll --serve"
