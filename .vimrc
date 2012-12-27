@@ -182,11 +182,11 @@ nnoremap <Space> <C-f>
 " map single shift to scroll back/up in normal mode
 nnoremap <Backspace> <C-b>
 
-" move the line down (by one line) 
-nnoremap - ddp
+" move current line down (by one line) 
+nnoremap <C-j> :m .+1<cr>==
 
-" move the line up (by one line) 
-" nnoremap _ ddkP
+" move current line up line up (by one line) 
+nnoremap <C-k> :m .-2<cr>==
 
 " delete one line in insert mode (and stay in insert mode on the same line)
 " inoremap <C-d> <Esc>0d$i
