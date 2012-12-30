@@ -208,7 +208,7 @@ nnoremap <leader>q :q!<cr>
 nnoremap <leader>x :x!<cr>
 
 " Fast toggling ':set paste' command
-nnoremap <leader>p :set paste!<cr>
+" nnoremap <leader>p :set paste!<cr>
 
 " Fast quoting a word in normal mode (when the cursor is over that word)
 nnoremap <leader>" viw<Esc>hbi"<Esc>lel
@@ -242,6 +242,9 @@ onoremap an[ :<C-u>normal! f[v%<cr>
 " select texts around last/previous parens and square brackets on current line
 onoremap al( :<C-u>normal! F)v%<cr>
 onoremap al[ :<C-u>normal! F]v%<cr>
+
+" open previous buffer in a (vertical, left) or (horizontal, above) splitted window
+nnoremap <leader>s :execute "leftabove vsplit " . bufname("#")<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Cope
