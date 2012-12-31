@@ -1,0 +1,4 @@
+[user]
+tidyworkarea = keep
+difftool     = kdiff3
+workarea     = /data/users/henry.huang/projects
