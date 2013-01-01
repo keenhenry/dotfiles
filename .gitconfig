@@ -1,12 +1,9 @@
 [user]
     name = Henry Huang
     email = keenhenry1109@gmail.com
-
 [color]
 	status = auto
 	diff = auto
 	branch = auto
-    interactive = auto
-
 [merge]
     tool = kdiff3
