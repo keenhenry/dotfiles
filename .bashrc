@@ -102,4 +102,3 @@ fi
 source ~/.rvm/scripts/rvm
 
 # export some paths
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
