@@ -4,7 +4,12 @@
 
 [core]
     editor = vim
+
 [alias]
 [color]
     status = auto
-    ui = true
+    diff = auto
+    branch = auto
+    interactive = auto
+[merge]
+    tool = kdiff3
