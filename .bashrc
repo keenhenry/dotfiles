@@ -98,5 +98,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Enable rvm commands in the current shell
+source ~/.rvm/scripts/rvm
+
 # export some paths
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
