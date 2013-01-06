@@ -246,6 +246,12 @@ onoremap al[ :<C-u>normal! F]v%<cr>
 " open previous buffer in a (vertical, left) or (horizontal, above) splitted window
 nnoremap <leader>s :execute "leftabove vsplit " . bufname("#")<cr>
 
+" search word under cursor (silently) with external grep and open quickfix window
+nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen 10<cr>
+
+nnoremap <leader>n :cnext<cr>
+nnoremap <leader>p :cprevious<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Cope
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
