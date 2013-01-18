@@ -42,12 +42,6 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-" Displaying Chinese Characters
-" if has("gui_gtk2")
-"   set guifont=Bitstream\ Vera\ Sans\ Mono\ 12,Fixed\ 12
-"   set guifontwide=Microsoft\ Yahei\ 12,WenQuanYi\ Zen\ Hei\ 12
-" endif
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -121,7 +115,6 @@ set shiftwidth=4	" The number of spaces inserted for indentation
 set smarttab
 
 set ai			    " Turn on autoindenting
-set si              " Smart indent
 set wrap            " Wrap lines
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
