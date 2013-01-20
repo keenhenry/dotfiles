@@ -5,5 +5,7 @@
 	status = auto
 	diff = auto
 	branch = auto
+[diff]
+    tool = kdiff3
 [merge]
     tool = kdiff3
