@@ -1,6 +1,8 @@
 [user]
     name = Henry Huang
     email = keenhenry1109@gmail.com
+[core]
+    editor = vim
 [color]
     ui = true
 [diff]
