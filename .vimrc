@@ -161,6 +161,7 @@ iabbrev adn and
 iabbrev waht what
 iabbrev tehn then
 iabbrev teh the
+iabbrev usualy usually
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
@@ -174,27 +175,66 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " After editing of my .vimrc file, source it!
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" Fast saving
-nnoremap <leader>w :w!<cr>
-
-" Fast quiting
-nnoremap <leader>q :q!<cr>
-
-" Fast save+quiting
-nnoremap <leader>x :x!<cr>
-
-" Fast toggling ':set paste' command
-" nnoremap <leader>p :set paste!<cr>
-
 " map single space to scroll down in normal mode
 nnoremap <Space> <C-f>
 
 " map single shift to scroll back/up in normal mode
 nnoremap <Backspace> <C-b>
 
+" move current line down (by one line) 
+nnoremap <C-j> :m .+1<cr>==
+
+" move current line up line up (by one line) 
+nnoremap <C-k> :m .-2<cr>==
+
+" Fast saving
+nnoremap <leader>w :w!<cr>
+
+" Fast quiting
+nnoremap <leader>q :q!<cr>
+
+" Fast save+quitting
+nnoremap <leader>x :x!<cr>
+
+" Fast toggling ':set paste' command
+" nnoremap <leader>p :set paste!<cr>
+
 " Scrolling in Autocompletion box with jk movement keys
 inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+
+" open previous buffer in a (vertical, left) or (horizontal, above) splitted window
+nnoremap <leader>s :execute "leftabove vsplit " . bufname("#")<cr>
+
+" this mapping should be replaced with Ack commands, learn how to use Ack first
+" search word under cursor (silently) with external grep and open quickfix window
+" nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen 10<cr>
+
+""""""""""""""""""""""""
+" mappings for buffers "
+""""""""""""""""""""""""
+
+" reload all buffers
+nnoremap <leader>r :bufdo e!<cr>
+
+"""""""""""""""""""""""""""""""""
+" mappings for quickfix windows "
+"""""""""""""""""""""""""""""""""
+
+" switching between quickfix windows
+nnoremap <S-l> :cnewer<cr>
+nnoremap <S-h> :colder<cr>
+
+" switching between items in the same quickfix window
+nnoremap <leader>n :cnext<cr>
+nnoremap <leader>p :cNext<cr>
+
+"""""""""""""""""""""""""
+" mappings for vim tabs "
+"""""""""""""""""""""""""
+nnoremap <C-l> :tabn<cr>
+nnoremap <C-h> :tabp<cr>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Cope
@@ -212,13 +252,13 @@ inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 " => Plugins related settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Settings for Taglist plugin
+"""""""" Settings for Taglist plugin
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"	" Setting the path to exuberant ctags utility
 let Tlist_Use_Right_Window = 1		    " To open the taglist window on the right hand side
 let Tlist_WinWidth = 50			        " Setting the default width of taglist window
 let Tlist_GainFocus_On_ToggleOpen = 1	" Set cursor to jump to taglist window when toggled open
 
-" Settings for NERDTree
+"""""""" Settings for NERDTree
 let NERDTreeShowBookmarks = 1          " Show bookmarks when NERDTree startup
 
 " NERTDTree toggle shortcut. Requires NERDTree plugin 
@@ -231,5 +271,5 @@ map <leader>c <c-_><c-_>
 map <silent> <F4> :TlistToggle<CR>
 
 " Autocompletion setting for python
-" let g:pydiction_location = '/home/henry/.vim/pydiction-1.2/complete-dict'
+" let g:pydiction_location    = '/home/henry/.vim/pydiction-1.2/complete-dict'
 " let g:pydiction_menu_height = 20
