@@ -246,11 +246,35 @@ onoremap al[ :<C-u>normal! F]v%<cr>
 " open previous buffer in a (vertical, left) or (horizontal, above) splitted window
 nnoremap <leader>s :execute "leftabove vsplit " . bufname("#")<cr>
 
+" this mapping should be replaced with Ack commands, learn how to use Ack first
 " search word under cursor (silently) with external grep and open quickfix window
-nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen 10<cr>
+" nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen 10<cr>
 
+""""""""""""""""""""""""
+" mappings for buffers "
+""""""""""""""""""""""""
+
+" reload all buffers
+nnoremap <leader>r :bufdo e!<cr>
+
+"""""""""""""""""""""""""""""""""
+" mappings for quickfix windows "
+"""""""""""""""""""""""""""""""""
+
+" switching between quickfix windows
+nnoremap <S-l> :cnewer<cr>
+nnoremap <S-h> :colder<cr>
+
+" switching between items in the same quickfix window
 nnoremap <leader>n :cnext<cr>
-nnoremap <leader>p :cprevious<cr>
+nnoremap <leader>p :cNext<cr>
+
+"""""""""""""""""""""""""
+" mappings for vim tabs "
+"""""""""""""""""""""""""
+nnoremap <C-l> :tabn<cr>
+nnoremap <C-h> :tabp<cr>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Cope
