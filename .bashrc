@@ -102,3 +102,5 @@ fi
 source ~/.rvm/scripts/rvm
 
 # export some paths
+PATH=$PATH:~/.local/bin
+export PATH
