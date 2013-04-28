@@ -35,3 +35,6 @@ alias hl='pygmentize -f html -o tmp.html'
 
 # jekyll alias
 alias jekylltest="jekyll; jekyll --serve"
+
+# command to run tmux
+alias tmux='t'

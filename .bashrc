@@ -83,15 +83,15 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # TMUX
-if which tmux 2>&1 >/dev/null; then
+# if which tmux 2>&1 >/dev/null; then
     # if no session is started, start a new session
-    test -z ${TMUX} && tmux
+    # test -z ${TMUX} && tmux
 
     # when quitting tmux, try to attach
-    while test -z ${TMUX}; do
-        tmux attach || break
-    done
-fi
+    # while test -z ${TMUX}; do
+        # tmux attach || break
+    # done
+# fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
