@@ -1,0 +1,23 @@
+[user]
+    name = Henry Huang
+    email = keenhenry1109@gmail.com
+[core]
+    editor = vim
+[color]
+    ui = true
+[diff]
+    tool = kdiff3
+[merge]
+    tool = kdiff3
+[alias]
+    ls = log --pretty=oneline --graph --decorate
+    st = status
+    co = checkout
+    cm = commit -m
+    di = diff
+    br = branch
+    unstage = reset HEAD --
+    undo = checkout --
+    last = log -1 HEAD
+[push]
+	default = simple

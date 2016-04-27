@@ -1,0 +1,9 @@
+# ignore (blacklist) everything
+*
+
+# except the following
+!.gitignore
+!.gitconfig
+!.vimrc
+!.bash_aliases
+!.bashrc
