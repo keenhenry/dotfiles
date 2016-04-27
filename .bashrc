@@ -110,7 +110,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # export some paths
-PATH=$PATH:~/.local/bin:/home/henry/sdks/google_appengine
+PATH=$PATH:/home/henry/sdks/google_appengine
 export PATH
 
 # GPG_TTY

@@ -44,6 +44,12 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+" Uncomment the following to have Vim load indentation rules and plugins
+" according to the detected filetype.
+if has("autocmd")
+  filetype plugin indent on
+endif
+
 " Uncomment the following to have Vim load autocomplettion rules and plugins
 " according to the detected filetype.
 filetype plugin on
@@ -64,7 +70,6 @@ set omnifunc=syntaxcomplete#Complete
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -316,26 +321,12 @@ nnoremap <C-h> :tabp<cr>
 " => Plugins related settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"""""""" Settings for Taglist plugin
-"let Tlist_Ctags_Cmd = "/usr/bin/ctags"	" Setting the path to exuberant ctags utility
-"let Tlist_Use_Right_Window = 1		    " To open the taglist window on the right hand side
-"let Tlist_WinWidth = 50			        " Setting the default width of taglist window
-"let Tlist_GainFocus_On_ToggleOpen = 1	" Set cursor to jump to taglist window when toggled open
-
 """""""" Settings for NERDTree
 let NERDTreeShowBookmarks = 1          " Show bookmarks when NERDTree startup
 
 " NERTDTree toggle shortcut. Requires NERDTree plugin 
 map <silent> <F2> :NERDTreeToggle<CR>
 
-
 """""""" Settings for T-Comment
 " Faster shortcut commenting. Requires T-Comment plugin
 map <leader>c <c-_><c-_>
-
-" Taglist toggle shortcut. Requires Taglist plugin
-"map <silent> <F4> :TlistToggle<CR>
-
-" Autocompletion setting for python
-"let g:pydiction_location    = '/home/henry/.vim/pydiction-1.2/complete-dict'
-"let g:pydiction_menu_height = 20
