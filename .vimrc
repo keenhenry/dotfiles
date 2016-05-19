@@ -28,6 +28,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bogado/file-line'
+Plugin 'SirVer/ultisnips' " for snippet engine
+Plugin 'honza/vim-snippets' " snippets used by snippet engine
 
 call vundle#end()
 filetype plugin indent on    " required for vundle
