@@ -116,3 +116,6 @@ export PATH
 # GPG_TTY
 export GPG_TTY=$(tty)
 export CSCOPE_EDITOR=`which vim`
+
+# added by Anaconda2 4.1.1 installer
+export PATH="/home/henry/anaconda2/bin:$PATH"
