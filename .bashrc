@@ -112,6 +112,7 @@ fi
 # export some paths
 PATH=$PATH:/home/henry/sdks/google_appengine
 export PATH
+export EDITOR='vim'
 
 # GPG_TTY
 export GPG_TTY=$(tty)
@@ -119,3 +120,14 @@ export CSCOPE_EDITOR=`which vim`
 
 # added by Anaconda2 4.1.1 installer
 export PATH="/home/henry/anaconda2/bin:$PATH"
+
+# spark environments
+SPARK_HOME=/home/henry/Work/repos/career/interviews/ing/spark
+export PATH=$SPARK_HOME/bin:$PATH
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# export PATH="$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-2.5.1/bin"
+export PATH="$HOME/.rvm/gems/ruby-2.5.1/bin:$PATH:$HOME/.rvm/bin"
+source ~/.rvm/scripts/rvm
